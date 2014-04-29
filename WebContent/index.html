@@ -1,1 +1,79 @@
-test01122
+
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage">
+<head>
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+
+<link rel="shortcut icon" href="css/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="css/images/favicon.ico" type="image/x-icon">
+
+<link type="text/css" rel="stylesheet" href="ext/resources/css/ext-all.css" />
+<link type="text/css" rel="stylesheet" href="css/override.css" />
+
+<title>Test Report</title>
+
+
+<!-- <x-compile> -->
+<!-- <x-bootstrap> -->
+<script src="ext/ext-all.js"></script>
+<script src="bootstrap.js"></script>
+<!-- </x-bootstrap> -->
+<script src="js/console-2014-03-20.js"></script>
+<script src="js/utility-2013-08-22.js"></script>
+<script src="app/app.js"></script>
+<!-- </x-compile> -->
+
+
+
+<script type="text/javascript">
+	
+
+	// loadext_dev requires is for dev. app.js requires is for product
+	Ext.require([ 'Ecfa.event.App'
+// 	              , 'Ecfa.Const', 'Ecfa.Config', 'Ecfa.ExtFix', 'Ecfa.ExtOverride', 'Ecfa.ExtSetting', 'Ecfa.util.Restful',
+// 			'Ecfa.locale.Converter', 'Ecfa.ux.proxy.NestedRest', 'Ecfa.reader.RestTaskGrid', 'Ext.util.Cookies', 'Ecfa.Spec' 
+			]);
+
+	Ext.onReady(function() {
+
+// 		// i18n for ExtJS		  		
+// 		loadJS("ext/locale/ext-lang-" + Locale.getLanguage() + ".js");
+// 		// fix bug in ExtJS
+// 		Ecfa.ExtFix.init(Ecfa.Config);
+// 		// override default behavior in ExtJS
+// 		Ecfa.ExtOverride.init(Ecfa.Config);
+// 		// setup ExtJS
+// 		Ecfa.ExtSetting.init(Ecfa.Config);
+
+
+	});
+</script>
+
+
+
+
+<script type="text/javascript">
+	Ext.onReady(function() {
+		Ecfa.event.App.on({
+			created : function() {
+				// var loadMask = new Ext.LoadMask(Ext.getBody());
+				// loadMask.show();
+				Ext.create('Ecfa.view.Viewport');
+				// loadMask.hide();
+			}
+		});
+	});
+</script>
+
+
+
+
+<!-- common footer -->
+
+</head>
+<body>
+
+</body>
+</html>
+
