@@ -3,84 +3,20 @@ Ext.define('Ecfa.ExtSetting', {
 	init : function(config) {
 
 		// Disable row selection when clicking row on grid
-		Ext.define('Ext.setting.grid.Panel', {
-			override : 'Ext.grid.Panel',
-			initComponent : function() {
-				if (this.selModel && Ext.Array.contains([ 'MULTI', 'SIMPLE' ], this.selModel.mode)) {
-					this.selModel.checkOnly = true;
-				}
-				this.callParent();
-			}
-		});
-		
-		// Set AJAX error handling
-		if (config && config.AJAX_TIMEOUT) {
-			Ext.Ajax.timeout = config.AJAX_TIMEOUT;
-			Ext.override(Ext.data.proxy.Ajax, { timeout : config.AJAX_TIMEOUT });
-		}		
-
-		// init stateful component
-		// Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider', {
-		// expires: new Date(new Date().getTime()+15552000000), // 180 days
-		// path: 'Ecfa'
-		// }));
 		// Ext.define('Ext.setting.grid.Panel', {
 		// override : 'Ext.grid.Panel',
 		// initComponent : function() {
-		// var me = this;
-		// var className = Ext.getClassName(me);
-		// if(className != null && className.indexOf('Ecfa') != -1 && className !== 'Ecfa.view.queue.task.FilterTaskGrid') {
-		// me.stateful = true;
-		// me.stateId = className;
+		// if (this.selModel && Ext.Array.contains([ 'MULTI', 'SIMPLE' ],
+		// this.selModel.mode)) {
+		// this.selModel.checkOnly = true;
 		// }
-		// me.callParent();
+		// this.callParent();
 		// }
 		// });
 
-		// Set AJAX error handling
-		// if (config && config.AJAX_TIMEOUT) {
-		// Ext.Ajax.timeout = config.AJAX_TIMEOUT;
-		// }
-
-		Ext.Ajax.on({
-			requestcomplete : function(conn, response, options, eOpts) {
-				// if the ip is denied by AuthAdvise, sign them out
-				if (Ext.decode(response.responseText).error === 'INVALID_IP') {
-					window.location = './signout';
-				}
-			},
-			requestexception : function(conn, response, options, eOpts) {
-
-				if (options.ignoreHandleException) {
-					return;
-				}
-
-				// retry failed request
-				// FIXME don't retry when timeout
-//				if (response.status === 0) {
-//					Ext.getCmp('notifybar').showError(Locale.getMsg('view.common.noInternet'), Ecfa.Config.NO_INTERNET_RETRY_PERIOD);
-//					Ext.Ajax.request(options);
-//				}
-
-				switch (response.status) {
-				case 302: // user session expired
-					window.location = './expire';
-					break;
-				case 401: // user is not logged in
-					window.location = './expire';
-					break;
-				case 403: // user is already logged in but does not have authority. 
-//					window.location = './signout';
-					break;
-				default:
-
-					break;
-				}
-			}
-		});
-
 		// global setting for Grid View
-		Ext.define("Ext.setting.grid.iew", {
+
+		Ext.define("Ext.setting.grid.View", {
 			override : "Ext.grid.View",
 			autoScroll : true,
 			enableTextSelection : true,
@@ -92,27 +28,6 @@ Ext.define('Ecfa.ExtSetting', {
 			override : 'Ext.panel.Table',
 			columnLines : true
 		});
-
-		// global setting for menu
-		 Ext.define('Ext.setting.MenuItem', {
-		 override : 'Ext.menu.Item',
-		 renderTpl: [
-		 '<tpl if="plain">',
-		 '<a id="{id}-itemEl" class="' + Ext.baseCSSPrefix + 'menu-item-link" style="padding:6px 2px 3px 10px" href="{href}" <tpl	 if="hrefTarget">target="{hrefTarget}"</tpl> hidefocus="true" unselectable="on">',
-		 '<span id="{id}-textEl" class="' + Ext.baseCSSPrefix + 'menu-item-text" <tpl if="menu">style="margin-right: 17px;"</tpl> >{text}</span>',
-		 '<tpl if="menu">',
-		 '<img id="{id}-arrowEl" src="{blank}" class="' + Ext.baseCSSPrefix + 'menu-item-arrow" />',
-		 '</tpl>',
-		 '</a>',
-		 '<tpl else>',
-		 '<a id="{id}-itemEl" class="' + Ext.baseCSSPrefix + 'menu-item-link" href="{href}" <tpl if="hrefTarget">target="{hrefTarget}"</tpl> hidefocus="true" unselectable="on">',
-		 '<img id="{id}-iconEl" src="{icon}" class="' + Ext.baseCSSPrefix + 'menu-item-icon {iconCls}" />',
-		 '<span id="{id}-textEl" class="' + Ext.baseCSSPrefix + 'menu-item-text" <tpl if="arrowCls">style="margin-right: 17px;"</tpl> >{text}</span>',
-		 '<img id="{id}-arrowEl" src="{blank}" class="{arrowCls}" />',
-		 '</a>',
-		 '</tpl>'
-		 ]
-		 });
 
 		// init quicktips
 		Ext.tip.QuickTipManager.init();

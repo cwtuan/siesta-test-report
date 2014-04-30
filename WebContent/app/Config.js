@@ -35,24 +35,24 @@ Ext.define('Ecfa.Config', {
 
 	constructor : function() {
 		var me = this;
-		Ext.Ajax.request({
-			url : 'rest/configs',
-			method : 'GET',
-			async : false,
-			success : function(resp) {
-				var json = Ext.decode(resp.responseText);
-				if (json.success) {
-					me.PORTAL_TYPE = json.target.portalType;
-					me.FTP_SERVER = json.target.ftpServer;
-				} else {
-					window.location = './signout';
-				}
-			},
-			failure : function() {
-				console.warn('Fail to get config.');
-				window.location = './signout';
-			}
-		});
+//		Ext.Ajax.request({
+//			url : 'rest/configs',
+//			method : 'GET',
+//			async : false,
+//			success : function(resp) {
+//				var json = Ext.decode(resp.responseText);
+//				if (json.success) {
+//					me.PORTAL_TYPE = json.target.portalType;
+//					me.FTP_SERVER = json.target.ftpServer;
+//				} else {
+//					window.location = './signout';
+//				}
+//			},
+//			failure : function() {
+//				console.warn('Fail to get config.');
+//				window.location = './signout';
+//			}
+//		});
 	}
 
 });

@@ -15,14 +15,14 @@ Ext.application({
 	name : 'Ecfa',
 
 	views : [ 'Viewport' ],
-	controllers : [],
-	autoCreateViewport : false,
+	controllers : [ 'Main' ],
+	autoCreateViewport : true,
 	onReady : function(fn) {
 		this.readyFn = fn;
 		this.on('loaded', this.readyFn, this);
 	},
 	launch : function() {
-		var me = this;
+		// var me = this;
 		console.log('Ext.application launch');
 		Ecfa.event.App.fireEvent('created');
 	}
