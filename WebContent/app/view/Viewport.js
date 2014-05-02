@@ -20,7 +20,9 @@ Ext.define('MyApp.view.Viewport', {
 	}, {
 		region : 'east',
 		xtype : 'assertionGrid',
-		flex : 0.8
+		flex : 0.8,
+		split : true,
+		collapsible : true,
 	}, {
 		region : 'center',
 		xtype : 'testCaseGrid'
