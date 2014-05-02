@@ -4,7 +4,7 @@ Ext.define('Ecfa.view.Viewport', {
 	requires : [
 
 	// view
-	'Ecfa.view.TestCaseGrid',
+	'Ecfa.view.TestCaseGrid', 'Ecfa.view.AssertionGrid',
 
 	// util
 	'Ecfa.util.Format'

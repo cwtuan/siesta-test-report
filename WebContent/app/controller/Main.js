@@ -12,6 +12,9 @@ Ext.define('Ecfa.controller.Main', {
 		me.control({
 			'testCaseGrid' : {
 				select : function(testCaseGrid, record, index, eOpts) {
+					console.log(	me.getAssertionGrid());
+				
+					console.log('record', record.get('assertions'));
 				}
 			}
 		// ,

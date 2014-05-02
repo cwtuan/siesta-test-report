@@ -22,8 +22,6 @@ Ext.application({
 		this.on('loaded', this.readyFn, this);
 	},
 	launch : function() {
-		// var me = this;
 		console.log('Ext.application launch');
-		Ecfa.event.App.fireEvent('created');
 	}
 });
