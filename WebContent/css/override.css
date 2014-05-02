@@ -773,12 +773,12 @@ a.label:hover,a.badge:hover {
 	background-color: #687E98;
 }
 
-.x-body {
-	background-image: url('images/bg_body.png');
-	/*fit*/
-	/* background-size: 100%; */
-	background-repeat: repeat-x;
-}
+/* .x-body { */
+/* 	background-image: url('images/bg_body.png'); */
+/* 	/*fit*/ */
+/* 	/* background-size: 100%; */ */
+/* 	background-repeat: repeat-x; */
+/* } */
 
 /* notify bar */
 /* http://ahlearns.wordpress.com/2011/12/16/ext-js-4-notification-bar/ */
