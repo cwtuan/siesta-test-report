@@ -43,9 +43,10 @@ Ext.define('Ecfa.view.TestCaseGrid', {
 			dataIndex : 'passed',
 			renderer : function(value, meta, record) {
 				var assertions = record.get('assertions');
-				var total = assertions.length;
+				var total = 0;
 				var passNum = 0;
 				Ext.Array.each(assertions, function(a) {
+					total += (a.passed != null) ? 1 : 0;
 					passNum += a.passed ? 1 : 0;
 				});
 				return value + Ext.String.format(' ({0}/{1})', passNum, total);
@@ -63,7 +64,7 @@ Ext.define('Ecfa.view.TestCaseGrid', {
 
 		me.tbar = [];
 
-		// TODO tabscrollermenu	
+		// TODO tabscrollermenu
 		Ext.Array.each(Ecfa.Config.test_result_files, function(file) {
 			me.tbar.push({
 				text : file,
@@ -82,10 +83,10 @@ Ext.define('Ecfa.view.TestCaseGrid', {
 		me.on({
 			afterrender : function(toolbar, eOpts) {
 				// me.down('button').btn.el.dom.click();
-//				setTimeout(3000, function() {
-					var button = me.down('button');
-					button.toggle(true);
-//				});
+				// setTimeout(3000, function() {
+				var button = me.down('button');
+				button.toggle(true);
+				// });
 
 			}
 		});
