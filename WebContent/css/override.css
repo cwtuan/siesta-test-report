@@ -1,4 +1,23 @@
 
+
+
+.topic {
+	padding: 2px 0 0 20px;
+/* 	background: transparent url(images/post.gif) no-repeat; */
+}
+
+.topic b {
+	font-family: tahoma, verdana;
+/* 	display: block; */
+/* 	color: #333; */
+}
+
+.author {
+	color: #333
+}
+
+
+
 a {
 	color: #04408C;
 	/* 	text-decoration: none;	 */
@@ -39,14 +58,17 @@ a {
 	color: #404040;
 	background-color: #eedc94;
 	background-repeat: repeat-x;
-	background-image: -khtml-gradient(linear, left top, left bottom, from(#fceec1), to(#eedc94));
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#fceec1),
+		to(#eedc94));
 	background-image: -moz-linear-gradient(top, #fceec1, #eedc94);
 	background-image: -ms-linear-gradient(top, #fceec1, #eedc94);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fceec1), color-stop(100%, #eedc94));
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fceec1),
+		color-stop(100%, #eedc94));
 	background-image: -webkit-linear-gradient(top, #fceec1, #eedc94);
 	background-image: -o-linear-gradient(top, #fceec1, #eedc94);
 	background-image: linear-gradient(top, #fceec1, #eedc94);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fceec1', endColorstr='#eedc94', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fceec1',
+		endColorstr='#eedc94', GradientType=0);
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	border-color: #eedc94 #eedc94 #e4c652;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -225,9 +247,12 @@ input,textarea {
 input:focus,textarea:focus {
 	outline: 0;
 	border-color: rgba(82, 168, 236, 0.8);
-	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
-	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px
+		rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px
+		rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px
+		rgba(82, 168, 236, 0.6);
 }
 
 input[type=file]:focus,input[type=checkbox]:focus,select:focus {
@@ -243,7 +268,8 @@ input[type=file]:focus,input[type=checkbox]:focus,select:focus {
 	background-position: 50% -2px;
 	margin-left: 1px;
 	background-color: transparent;
-	background-image: url("../js/ext-4.1.0/resources/themes/images/default/grid/unchecked.gif");
+	background-image:
+		url("../js/ext-4.1.0/resources/themes/images/default/grid/unchecked.gif");
 	background-position: -1px -1px;
 	background-repeat: no-repeat;
 	height: 14px;
@@ -252,10 +278,9 @@ input[type=file]:focus,input[type=checkbox]:focus,select:focus {
 }
 
 .x-boundlist-selected .x-combo-checker {
-	background-image: url("../js/ext-4.1.0/resources/themes/images/default/grid/checked.gif");
+	background-image:
+		url("../js/ext-4.1.0/resources/themes/images/default/grid/checked.gif");
 }
-
-
 
 .disabled-row .x-grid-cell {
 	background-color: #808080 !important;
@@ -265,7 +290,6 @@ input[type=file]:focus,input[type=checkbox]:focus,select:focus {
 	cursor: pointer;
 }
 
-
 .ui-autocomplete-input {
 	border: none;
 }
@@ -274,7 +298,8 @@ input[type=file]:focus,input[type=checkbox]:focus,select:focus {
 	font-weight: normal;
 }
 
-.ui-menu .ui-menu-item a.ui-state-hover,.ui-menu .ui-menu-item a.ui-state-active {
+.ui-menu .ui-menu-item a.ui-state-hover,.ui-menu .ui-menu-item a.ui-state-active
+	{
 	font-weight: bold !important;
 }
 
@@ -309,7 +334,8 @@ label.x-component {
 	white-space: nowrap;
 }
 
-​ /* For multiple line row expander and multiple whitespace */                                     
+​ /* For multiple line row expander and multiple whitespace */   
+	                                     
 .x-grid-rowbody p {
 	white-space: pre-wrap;
 }
@@ -509,10 +535,13 @@ a.label:hover,a.badge:hover {
 	opacity: 0.5;
 }
 
-.customDisabledClass .x-form-item-label,.customDisabledClass .x-form-field,.customDisabledClass .x-form-cb-label,.customDisabledClass .x-form-trigger {
+.customDisabledClass .x-form-item-label,.customDisabledClass .x-form-field,.customDisabledClass .x-form-cb-label,.customDisabledClass .x-form-trigger
+	{
 	opacity: .7;
 	-moz-opacity: .7;
-	filter: alpha(opacity =                                                                         70);
+	filter: alpha(opacity = 
+		                                                                         
+		 70);
 }
 
 .x-progress-red .x-progress-bar {
@@ -539,7 +568,8 @@ a.label:hover,a.badge:hover {
 .x-grid-checkheader {
 	width: 13px;
 	height: 13px;
-	background-image: url('../extjs/resources/themes/images/default/form/checkbox.gif');
+	background-image:
+		url('../extjs/resources/themes/images/default/form/checkbox.gif');
 	background-repeat: no-repeat;
 	background-color: transparent;
 	overflow: hidden;
@@ -697,7 +727,8 @@ a.label:hover,a.badge:hover {
 	color: #000000 !important;
 }
 
-.type0 .x-grid-cell,.type8 .x-grid-cell,.type10 .x-grid-cell,.type11 .x-grid-cell {
+.type0 .x-grid-cell,.type8 .x-grid-cell,.type10 .x-grid-cell,.type11 .x-grid-cell
+	{
 	border-top-color: rgb(216, 216, 216) !important;
 	background-color: rgb(216, 216, 216) !important;
 	color: #000000 !important;
@@ -776,15 +807,15 @@ a.label:hover,a.badge:hover {
 }
 
 /*cell style for state*/
-.x-grid-cell.pause, .x-grid-cell.sys_pause, .x-grid-cell.sys_holding  {
+.x-grid-cell.pause,.x-grid-cell.sys_pause,.x-grid-cell.sys_holding {
 	background-color: #FFFFD4 !important;
 }
 
-.x-grid-cell.run, .x-grid-cell.movgen {
+.x-grid-cell.run,.x-grid-cell.movgen {
 	background-color: #E4FDE4 !important;
 }
 
-.x-grid-cell.err, .x-grid-cell.movgen_err {
+.x-grid-cell.err,.x-grid-cell.movgen_err {
 	background-color: #FEE2E2 !important;
 }
 
@@ -813,7 +844,8 @@ a.label:hover,a.badge:hover {
 .x-grid-checkheader {
 	width: 13px;
 	height: 13px;
-	background-image: url('../ext/resources/themes/images/default/form/checkbox.gif');
+	background-image:
+		url('../ext/resources/themes/images/default/form/checkbox.gif');
 	background-repeat: no-repeat;
 	background-color: transparent;
 	overflow: hidden;
@@ -830,7 +862,8 @@ a.label:hover,a.badge:hover {
 .x-grid-checkheader-disabled {
 	width: 13px;
 	height: 13px;
-	background-image: url('../ext/resources/themes/images/default/form/checkbox.gif');
+	background-image:
+		url('../ext/resources/themes/images/default/form/checkbox.gif');
 	background-repeat: no-repeat;
 	background-color: transparent;
 	overflow: hidden;
@@ -920,8 +953,6 @@ a.label:hover,a.badge:hover {
 	border-bottom: 1px solid #ddd;
 }
 /* dashboard END*/
-
-
 .grid-loading-error {
 	font-size: medium;
 	color: red;

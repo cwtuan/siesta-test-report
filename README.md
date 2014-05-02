@@ -3,6 +3,7 @@ siesta-test-report
 
 The test report in HTML format for siesta.
 
+textselction for grid
 
 TODO 
  test case1: FF(pass) Chrome(pass)
@@ -10,3 +11,5 @@ TODO
  
  
  IE broken
+ 
+ rename app name

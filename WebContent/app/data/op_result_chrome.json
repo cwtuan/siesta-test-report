@@ -10,35 +10,11 @@
          "startDate":1398261030697,
          "endDate":1398261044180,
          "passed":false,
-         "url":"tests/signin/signin_up_owner.t.js",
+         "url":"tests/signin/signin_op_admin.t.js",
          "assertions":[
             {
                "type":"Siesta.Result.Diagnostic",
                "description":"signout successfully"
-            },
-            {
-               "type":"Siesta.Result.Assertion",
-               "passed":false,
-               "description":"Failed to signin",
-               "annotation":"username=qq passwd=qqqqqq"
-            },
-            {
-               "type":"Siesta.Result.Assertion",
-               "passed":false,
-               "description":"Failed to signin",
-               "annotation":"username=qq passwd=qqqqqq"
-            },
-            {
-               "type":"Siesta.Result.Assertion",
-               "passed":false,
-               "description":"Failed to signin",
-               "annotation":"username=qq passwd=qqqqqq"
-            },
-            {
-               "type":"Siesta.Result.Assertion",
-               "passed":false,
-               "description":"Failed to signin",
-               "annotation":"username=qq passwd=qqqqqq"
             },
             {
                "type":"Siesta.Result.Assertion",
@@ -67,22 +43,7 @@
          "startDate":1398261059699,
          "endDate":1398261067728,
          "passed":true,
-         "url":"tests/project/project_CRUD.t.js",
-         "assertions":[
-            {
-               "type":"Siesta.Result.Assertion",
-               "passed":true,
-               "description":"test for is"
-            }
-         ]
-      },
-      {
-         "type":"Siesta.Result.SubTest",
-         "name":null,
-         "startDate":1398261059699,
-         "endDate":1398261067728,
-         "passed":true,
-         "url":"tests/project/project_CRUD.t.js",
+         "url":"tests/project/pool_CRUD.t.js",
          "assertions":[
             {
                "type":"Siesta.Result.Assertion",

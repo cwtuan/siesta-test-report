@@ -19,7 +19,7 @@ Ext.define('Ecfa.view.Viewport', {
 		margins : '0 0 5 0'
 	}, {
 		region : 'east',
-		title : 'East Panel',
+		xtype : 'assertionGrid',
 		flex : 0.8
 	}, {
 		region : 'center',

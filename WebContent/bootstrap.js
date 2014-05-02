@@ -10,7 +10,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.enhance.panel.Panel": "app/ExtOverride.js",
   "Ext.setting.grid.view": "app/ExtSetting.js",
   "Ext.enhance.data.Store": "app/ExtOverride.js",
-  "Ext.ux.GroupTreeChunker": "ext/src/ux/GroupTabPanel.js",
+  "Ext.ux.GroupTreeChunker": "ext/ux/GroupTabPanel.js",
   "Ext.Container.forground": "app/ExtOverride.js",
   "Ext.enhance.form.BasicForm": "app/ExtOverride.js",
   "Ext": "ext/src",

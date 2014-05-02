@@ -1,15 +1,15 @@
 // TODO generate data automatically from Ecfa.Const.Job
 
-Ext.define('Ecfa.store.TestCase', {
+Ext.define('Ecfa.store.Assertion', {
 	extend : 'Ext.data.Store',
-	model : 'Ecfa.model.TestCase',
+	model : 'Ecfa.model.Assertion',
 	proxy : {
-		type : 'ajax',
+		type : 'memory',
 		// url : 'app/data/up_result_chrome.json',
 		reader : {
-			type : 'json',
-			root : 'testCases'
+			type : 'json'
+		// ,
+		// root : 'testCases'
 		}
 	}
-
 });
