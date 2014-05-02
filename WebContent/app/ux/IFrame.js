@@ -1,22 +1,28 @@
+/*!
+ * Ext JS Library 4.0
+ * Copyright(c) 2006-2011 Sencha Inc.
+ * licensing@sencha.com
+ * http://www.sencha.com/license
+ */
+
 /**
- * Add by Alvita 2013.8.7
- * iframe for download, and the exception handler with Message Box
- * */
-Ext.define('Ecfa.ux.IFrame', {
+ * Barebones iframe implementation. For serious iframe work, see the
+ * ManagedIFrame extension
+ * (http://www.sencha.com/forum/showthread.php?71961).
+ */
+Ext.define('Ext.ux.IFrame', {
     extend: 'Ext.Component',
 
-    alias: 'widget.ecfaiframe',
+    alias: 'widget.uxiframe',
 
     loadMask: 'Loading...',
 
-    src: 'about:blank',    
-    
+    src: 'about:blank',
+
     renderTpl: [
         '<iframe src="{src}" name="{frameName}" width="100%" height="100%" frameborder="0"></iframe>'
     ],
 
-   
-    
     initComponent: function () {
         this.callParent();
 
@@ -33,9 +39,7 @@ Ext.define('Ecfa.ux.IFrame', {
     },
 
     initEvents : function() {
-        var me = this,
-            iframeEl = me.iframeEl.dom,
-            frameEl = me.getFrame();
+        var me = this;
         me.callParent();
         me.iframeEl.on('load', me.onLoad, me);
     },
@@ -61,9 +65,8 @@ Ext.define('Ecfa.ux.IFrame', {
     },
 
     getWin: function() {
-    	//console.log(me.frameName);
-        var me = this,        
-            name = me.frameName,            
+        var me = this,
+            name = me.frameName,
             win = Ext.isIE
                 ? me.iframeEl.dom.contentWindow
                 : window.frames[name];
@@ -76,24 +79,28 @@ Ext.define('Ecfa.ux.IFrame', {
     },
 
     beforeDestroy: function () {
-        var me = this,
-            doc, prop;
+        this.cleanupListeners(true);
+        this.callParent();
+    },
+    
+    cleanupListeners: function(destroying){
+        var doc, prop;
 
-        if (me.rendered) {
+        if (this.rendered) {
             try {
-                doc = me.getDoc();
+                doc = this.getDoc();
                 if (doc) {
                     Ext.EventManager.removeAll(doc);
-                    for (prop in doc) {
-                        if (doc.hasOwnProperty && doc.hasOwnProperty(prop)) {
-                            delete doc[prop];
+                    if (destroying) {
+                        for (prop in doc) {
+                            if (doc.hasOwnProperty && doc.hasOwnProperty(prop)) {
+                                delete doc[prop];
+                            }
                         }
                     }
                 }
             } catch(e) { }
         }
-
-        me.callParent();
     },
 
     onLoad: function() {
@@ -101,7 +108,7 @@ Ext.define('Ecfa.ux.IFrame', {
             doc = me.getDoc(),
             fn = me.onRelayedEvent;
 
-        if (doc && me.src != 'about:blank') {
+        if (doc) {
             try {
                 Ext.EventManager.removeAll(doc);
 
@@ -123,12 +130,13 @@ Ext.define('Ecfa.ux.IFrame', {
             }
 
             // We need to be sure we remove all our events from the iframe on unload or we're going to LEAK!
-            Ext.EventManager.on(window, 'unload', me.beforeDestroy, me);
+            Ext.EventManager.on(this.getWin(), 'beforeunload', me.cleanupListeners, me);
 
             this.el.unmask();
             this.fireEvent('load', this);
-            Ext.getCmp('notifybar').showError(Locale.getMsg('err.donwloadFail'));
+
         } else if(me.src && me.src != '') {
+
             this.el.unmask();
             this.fireEvent('error', this);
         }
@@ -140,8 +148,15 @@ Ext.define('Ecfa.ux.IFrame', {
         // relay event from the iframe's document to the document that owns the iframe...
 
         var iframeEl = this.iframeEl,
-            iframeXY = iframeEl.getXY(),
-            eventXY = event.getXY();
+
+            // Get the left-based iframe position
+            iframeXY = Ext.Element.getTrueXY(iframeEl),
+            originalEventXY = event.getXY(),
+
+            // Get the left-based XY position.
+            // This is because the consumer of the injected event (Ext.EventManager) will
+            // perform its own RTL normalization.
+            eventXY = Ext.EventManager.getPageXY(event.browserEvent);
 
         // the event from the inner document has XY relative to that document's origin,
         // so adjust it to use the origin of the iframe in the outer document:
@@ -149,7 +164,7 @@ Ext.define('Ecfa.ux.IFrame', {
 
         event.injectEvent(iframeEl); // blame the iframe for the event...
 
-        event.xy = eventXY; // restore the original XY (just for safety)
+        event.xy = originalEventXY; // restore the original XY (just for safety)
     },
 
     load: function (src) {
@@ -165,12 +180,4 @@ Ext.define('Ecfa.ux.IFrame', {
             frame.src = me.src = (src || me.src);
         }
     }
-    
-   /* getException : function(iframeComponent){
-    	//console.log(iframeComponent.iframeEl.dom.contentDocument.body.innerText);
-    	var innerText = iframeComponent.iframeEl.dom.contentDocument.body.innerText;
-    	if(innerText.indexOf('HTTP Status 500')	!== -1 ){
-    		console.log('HTTP Status 500');
-    	}
-    }*/
 });
