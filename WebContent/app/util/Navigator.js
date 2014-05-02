@@ -3,12 +3,12 @@
  */
 
 /* Ex1 :Just switch to the view pane */
-// Ecfa.Navigator.show('#opMonitor');
+// MyApp.Navigator.show('#opMonitor');
 /* Ex2: not only switct to view panel but also show a a specific tab panel */
-// Ecfa.Navigator.show('#opMonitor', '#monitorView #usagePanel');
-Ext.define('Ecfa.util.Navigator', {
+// MyApp.Navigator.show('#opMonitor', '#monitorView #usagePanel');
+Ext.define('MyApp.util.Navigator', {
 	singleton : true,
-	alternateClassName : [ 'Ecfa.Navigator' ],
+	alternateClassName : [ 'MyApp.Navigator' ],
 
 	/**
 	 * <pre>

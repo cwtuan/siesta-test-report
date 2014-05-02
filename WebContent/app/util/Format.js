@@ -1,6 +1,6 @@
-﻿Ext.define('Ecfa.util.Format', {
+﻿Ext.define('MyApp.util.Format', {
 	singleton : true,
-	alternateClassName : [ 'Ecfa.Format' ],
+	alternateClassName : [ 'MyApp.Format' ],
 	usagePercentage : function(value) {
 		if (value && !isNaN(value)) {
 			// show 100% when larger than 100%, should only happened in some rare cases
@@ -40,12 +40,12 @@
 	dateTime : function(timestamp) {
 		// For example: 2014/2/1 20:11:12
 		// TODO i18n. Y/m/d -> m/d/Y for en_US
-		return (timestamp == null) || (timestamp == 0) ? '' : Ext.util.Format.date(new Date(timestamp), Ecfa.Config.DATETIME_FORMAT);
+		return (timestamp == null) || (timestamp == 0) ? '' : Ext.util.Format.date(new Date(timestamp), MyApp.Config.DATETIME_FORMAT);
 	},
 	date : function(timestamp) {
 		// For example: 2014/2/1
 		// TODO i18n. Y/m/d -> m/d/Y for en_US
-		return (timestamp == null) || (timestamp == 0) ? '' : Ext.util.Format.date(new Date(timestamp), Ecfa.Config.DATE_FORMAT);
+		return (timestamp == null) || (timestamp == 0) ? '' : Ext.util.Format.date(new Date(timestamp), MyApp.Config.DATE_FORMAT);
 	},
 	formatDate : function(date) { // Display week day within a week
 		if (!date) {
@@ -121,25 +121,25 @@
 
 	currency : function(value) {
 
-		var currency = Ecfa.Config.CURRENCY;
+		var currency = MyApp.Config.CURRENCY;
 		// console.log(currency);
-		if (currency == Ecfa.Const.Currency.USD) {
+		if (currency == MyApp.Const.Currency.USD) {
 			// console.log('USD');
 			// console.log('$' + this.floatRound(value, 2));
-			return '$' + this.floatRound(value, Ecfa.Const.DOLLAR_ROUND);
+			return '$' + this.floatRound(value, MyApp.Const.DOLLAR_ROUND);
 
-		} else if (currency == Ecfa.Const.Currency.NTD) {
+		} else if (currency == MyApp.Const.Currency.NTD) {
 
 			return 'NTD' + this.floatRound(value, 0);
 
 		} else {
-			value = this.floatRound(value, Ecfa.Const.DOLLAR_ROUND);
-			return parseFloat(value).toFixed(Ecfa.Const.DOLLAR_ROUND);
+			value = this.floatRound(value, MyApp.Const.DOLLAR_ROUND);
+			return parseFloat(value).toFixed(MyApp.Const.DOLLAR_ROUND);
 		}
 
 	},
 	cost : function(value) {
-		return parseFloat(value).toFixed(Ecfa.Const.DOLLAR_ROUND);
+		return parseFloat(value).toFixed(MyApp.Const.DOLLAR_ROUND);
 	},
 
 	// alter fullpath to path

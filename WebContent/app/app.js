@@ -12,7 +12,7 @@
 // DO NOT DELETE - this directive is required for Sencha Cmd packages to work.
 // @require @packageOverrides
 Ext.application({
-	name : 'Ecfa',
+	name : 'MyApp',
 
 	views : [ 'Viewport' ],
 	controllers : [ 'Main' ],

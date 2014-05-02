@@ -1,4 +1,4 @@
-Ext.define('Ecfa.Config', {
+Ext.define('MyApp.Config', {
 	singleton : true,
 	/* others */
 	DATETIME_FORMAT : 'Y/m/d H:i:s',

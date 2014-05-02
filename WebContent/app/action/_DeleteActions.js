@@ -1,5 +1,5 @@
-Ext.define('Ecfa.action.DeleteActions', {
-	extend : 'Ecfa.action.Action',
+Ext.define('MyApp.action.DeleteActions', {
+	extend : 'MyApp.action.Action',
 	icon : 'css/images/delete_16x16.png',	
 	constructor : function(config) {
 		var me = this;

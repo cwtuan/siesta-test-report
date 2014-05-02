@@ -1,8 +1,8 @@
-// TODO generate data automatically from Ecfa.Const.Job
+// TODO generate data automatically from MyApp.Const.Job
 
-Ext.define('Ecfa.store.TestCase', {
+Ext.define('MyApp.store.TestCase', {
 	extend : 'Ext.data.Store',
-	model : 'Ecfa.model.TestCase',
+	model : 'MyApp.model.TestCase',
 	proxy : {
 		type : 'ajax',
 		// url : 'app/data/up_result_chrome.json',

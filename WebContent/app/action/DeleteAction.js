@@ -1,5 +1,5 @@
-Ext.define('Ecfa.action.DeleteAction', {
-	extend : 'Ecfa.action.Action',
+Ext.define('MyApp.action.DeleteAction', {
+	extend : 'MyApp.action.Action',
 	icon : 'css/images/delete_16x16.png',
 	confirmMsg : null, // leave it null if you don't want to show confirm win
 	getErrorMsg : null, // must be overrided
@@ -9,7 +9,7 @@ Ext.define('Ecfa.action.DeleteAction', {
 		config.defaultTooltip = Locale.getMsg('view.common.delete');
 		config.request = function() {
 			var me = this;
-			Ecfa.Restful.request({
+			MyApp.Restful.request({
 				method : 'DELETE',
 				record : me.record,
 				success : function(jsonResp) {

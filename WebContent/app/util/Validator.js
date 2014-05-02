@@ -1,8 +1,8 @@
 // FIXME  not work in resetPassword.jsp
 
-Ext.define('Ecfa.util.Validator', {
+Ext.define('MyApp.util.Validator', {
 	singleton : true,
-	alternateClassName : [ 'Ecfa.Validator' ],
+	alternateClassName : [ 'MyApp.Validator' ],
 	// constructor : function() {
 	// },
 	minPasswordLength : function(value) {
@@ -28,9 +28,9 @@ Ext.define('Ecfa.util.Validator', {
 	inviteEmail : function(email) {
 		email = email.toLowerCase();
 
-		if (email === Ecfa.Session.getUser().email) {
+		if (email === MyApp.Session.getUser().email) {
 			return Locale.getMsg('view.project.user.invite.validator.current_user');
-		} else if (Ecfa.StoreUtil.getStore('projectUsers').findExact('email', email) !== -1) {
+		} else if (MyApp.StoreUtil.getStore('projectUsers').findExact('email', email) !== -1) {
 			return Locale.getMsg('view.project.user.invite.validator.user_in_project');
 		} else if (Ext.getStore('project.Invitation').findExact('email', email) !== -1) {
 			return Locale.getMsg('view.project.user.invite.validator.user_in_invitation');
@@ -49,7 +49,7 @@ Ext.define('Ecfa.util.Validator', {
 			} else {
 				folderNames = folder.split('/');
 			}
-			if (folderNames.length >= 3 && folderNames[2] === Ecfa.Const.Folder.Name.RESOURCE) {
+			if (folderNames.length >= 3 && folderNames[2] === MyApp.Const.Folder.Name.RESOURCE) {
 				return true;
 			} else {
 				return Locale.getMsg('view.transfer.folder.path.invalid.shouldResourceFolder');

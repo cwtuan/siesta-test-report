@@ -1,6 +1,6 @@
 // TODO tooltip for project folder
 
-Ext.define('Ecfa.reader.transfer.Folder', {
+Ext.define('MyApp.reader.transfer.Folder', {
 	extend : 'Ext.data.reader.Json',
 	alias : 'reader.folder',
 	getChildrenNodes : function(jsonNodes) {

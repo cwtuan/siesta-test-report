@@ -9,7 +9,7 @@
 //		} ]
 //	}
 
-Ext.define('Ecfa.reader.RestTaskGrid', {
+Ext.define('MyApp.reader.RestTaskGrid', {
 	extend : 'Ext.data.reader.Json',
 	alias : 'reader.restTaskGrid',
 	successProperty : 'success',

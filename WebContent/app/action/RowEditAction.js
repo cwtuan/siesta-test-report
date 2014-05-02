@@ -1,5 +1,5 @@
-Ext.define('Ecfa.action.RowEditAction', {
-	extend : 'Ecfa.action.Action',
+Ext.define('MyApp.action.RowEditAction', {
+	extend : 'MyApp.action.Action',
 	icon : 'css/images/edit_16x16.png',
 	getErrorMsg : null, // must be overrided
 	// record : null,
@@ -17,7 +17,7 @@ Ext.define('Ecfa.action.RowEditAction', {
 			config.panel.on({
 				edit : function(editor, e) {
 
-					Ecfa.Restful.request({
+					MyApp.Restful.request({
 						record : e.record,
 						method : 'PUT',
 						success : function(jsonResp) {
@@ -30,7 +30,7 @@ Ext.define('Ecfa.action.RowEditAction', {
 						}
 					});
 
-					// Ecfa.Restful.PUT(url, e.record.data, {
+					// MyApp.Restful.PUT(url, e.record.data, {
 					// success : function(jsonResp) {
 					// config.eventType.fireEvent('updated');
 					// },

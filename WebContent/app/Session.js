@@ -1,4 +1,4 @@
-Ext.define('Ecfa.Session', {
+Ext.define('MyApp.Session', {
 	singleton : true,
 	user : null,
 	constructor : function() {
@@ -9,7 +9,7 @@ Ext.define('Ecfa.Session', {
 	getSession : function() {
 		var me = this;
 		var url;
-		if (Ecfa.Config.isOP()) {
+		if (MyApp.Config.isOP()) {
 			url = 'rest/op/session/user';
 		} else {
 			url = 'rest/session/user';

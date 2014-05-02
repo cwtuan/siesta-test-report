@@ -2,7 +2,7 @@
  * To switch view, use Ext.getCmp('mainToolbar').press('#opMonitor');
  */
 
-Ext.define('Ecfa.view.TestCaseGrid', {
+Ext.define('MyApp.view.TestCaseGrid', {
 	extend : 'Ext.grid.Panel',
 	alias : 'widget.testCaseGrid',
 	title : 'Test Cases',
@@ -19,7 +19,7 @@ Ext.define('Ecfa.view.TestCaseGrid', {
 	initComponent : function() {
 		var me = this;
 
-		me.store = Ext.create('Ecfa.store.TestCase');
+		me.store = Ext.create('MyApp.store.TestCase');
 
 		me.columns = [ {
 			xtype : 'rownumberer'
@@ -31,12 +31,12 @@ Ext.define('Ecfa.view.TestCaseGrid', {
 			text : 'startDate',
 			dataIndex : 'startDate',
 			width : 150,
-			renderer : Ecfa.Format.dateTime
+			renderer : MyApp.Format.dateTime
 		}, {
 			text : 'endDate',
 			dataIndex : 'endDate',
 			width : 150,
-			renderer : Ecfa.Format.dateTime
+			renderer : MyApp.Format.dateTime
 		}, {
 			text : 'passed',
 			width : 150,
@@ -65,7 +65,7 @@ Ext.define('Ecfa.view.TestCaseGrid', {
 		me.tbar = [];
 
 		// TODO tabscrollermenu
-		Ext.Array.each(Ecfa.Config.test_result_files, function(file) {
+		Ext.Array.each(MyApp.Config.test_result_files, function(file) {
 			me.tbar.push({
 				text : file,
 				icon : 'css/images/book.png',

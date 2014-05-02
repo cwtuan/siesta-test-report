@@ -1,4 +1,4 @@
-Ext.define('Ecfa.Const', {
+Ext.define('MyApp.Const', {
 	singleton : true,
 
 	Ftp : {

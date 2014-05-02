@@ -2,9 +2,9 @@
  * Convert locale key to value
  * 
  */
-Ext.define('Ecfa.locale.Converter', {
+Ext.define('MyApp.locale.Converter', {
 	singleton : true,
-	alternateClassName : [ 'Ecfa.Converter' ],
+	alternateClassName : [ 'MyApp.Converter' ],
 	// input true/false
 	yes_no : function(value) {
 		return value ? Locale.getMsg('view.common.yes') : Locale.getMsg('view.common.no');
@@ -74,23 +74,23 @@ Ext.define('Ecfa.locale.Converter', {
 
 		var result = '';
 		// result += '<a href="#">';
-		if (status === Ecfa.Const.FILE_STATUS_WAITING) {
+		if (status === MyApp.Const.FILE_STATUS_WAITING) {
 			result += '<img src="css/images/hourglass_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_UPLOADING) {
+		} else if (status === MyApp.Const.FILE_STATUS_UPLOADING) {
 			result += '<img src="css/images/arrow_up_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_PAUSED) {
+		} else if (status === MyApp.Const.FILE_STATUS_PAUSED) {
 			result += '<img src="css/images/stop_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_PAUSING) {
+		} else if (status === MyApp.Const.FILE_STATUS_PAUSING) {
 			result += '<img src="css/images/arrow_up_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_UPLOAD_FAIL) {
+		} else if (status === MyApp.Const.FILE_STATUS_UPLOAD_FAIL) {
 			result += '<img src="css/images/exclamation_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_COMPLETED) {
+		} else if (status === MyApp.Const.FILE_STATUS_COMPLETED) {
 			result += '<img src="css/images/check_mark_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_DELETED) {
+		} else if (status === MyApp.Const.FILE_STATUS_DELETED) {
 			result += '<img src="css/images/delete_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_DOWNLOADING) {
+		} else if (status === MyApp.Const.FILE_STATUS_DOWNLOADING) {
 			result += '<img src="css/images/arrow_down_16x16.png" ';
-		} else if (status === Ecfa.Const.FILE_STATUS_DOWNLOAD_PAUSE) {
+		} else if (status === MyApp.Const.FILE_STATUS_DOWNLOAD_PAUSE) {
 			result += '<img src="css/images/stop_16x16.png" ';
 		}
 

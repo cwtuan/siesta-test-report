@@ -1,11 +1,11 @@
-Ext.define('Ecfa.util.Restful', {
+Ext.define('MyApp.util.Restful', {
 	singleton : true,
-	alternateClassName : [ 'Ecfa.Restful' ],
+	alternateClassName : [ 'MyApp.Restful' ],
 
 	/**
 	 * @decrepted
 	 */
-	// Usage: Ecfa.Restful.GET('rest/auth/users', [ { oid : "a"}, { oid : "b"} ], {success: function(jsonResp){},failure: function(){},callback:
+	// Usage: MyApp.Restful.GET('rest/auth/users', [ { oid : "a"}, { oid : "b"} ], {success: function(jsonResp){},failure: function(){},callback:
 	// function(jsonResp){}});
 	// @decrepated. Use request(..) instead.
 	GET : function(url, params, callback, timeout) {
@@ -21,7 +21,7 @@ Ext.define('Ecfa.util.Restful', {
 	/**
 	 * @decrepted
 	 */
-	// Usage: Ecfa.Restful.POST('rest/auth/users', {id: 123, name:'Tony'}, {success: function(jsonResp){},failure: function(){},callback:
+	// Usage: MyApp.Restful.POST('rest/auth/users', {id: 123, name:'Tony'}, {success: function(jsonResp){},failure: function(){},callback:
 	// function(jsonResp){}});
 	// @decrepated. Use request(..) instead.
 	POST : function(url, jsonModel, callback, timeout) {
@@ -32,7 +32,7 @@ Ext.define('Ecfa.util.Restful', {
 	/**
 	 * @decrepted
 	 */
-	// Usage: Ecfa.Restful.DELETE('rest/auth/users', [1,2], {success: function(jsonResp){},failure: function(){},callback: function(jsonResp){}});
+	// Usage: MyApp.Restful.DELETE('rest/auth/users', [1,2], {success: function(jsonResp){},failure: function(){},callback: function(jsonResp){}});
 	// @decrepated. Use request(..) instead.
 	DELETE : function(url, ids, callback, timeout) {
 		Ext.each(ids, function(id) {
@@ -45,7 +45,7 @@ Ext.define('Ecfa.util.Restful', {
 	/**
 	 * @decrepted
 	 */
-	// Usage: Ecfa.Restful.PUT('rest/auth/users', [{id:1 ,name : 'Tony'},{id:2 ,name : 'Tony2'}], {success: function(jsonResp){},failure: function(){},callback:
+	// Usage: MyApp.Restful.PUT('rest/auth/users', [{id:1 ,name : 'Tony'},{id:2 ,name : 'Tony2'}], {success: function(jsonResp){},failure: function(){},callback:
 	// function(jsonResp){}});
 	// @decrepated. Use request(..) instead.
 	PUT : function(url, jsonModels, callback, timeout) {
@@ -91,7 +91,7 @@ Ext.define('Ecfa.util.Restful', {
 		}
 
 	},
-	// Usage: refer to email "RE: [UI] Ecfa.Restful.request" sent at 2013/8/5 下午 06:18
+	// Usage: refer to email "RE: [UI] MyApp.Restful.request" sent at 2013/8/5 下午 06:18
 	request : function(options) {
 
 		var jsonData = {};
@@ -164,7 +164,7 @@ Ext.define('Ecfa.util.Restful', {
 
 					console.log('options.failureSubject', options.failureSubject);
 					if (options.failureSubject) {
-						options.notifyBar.showError(Ecfa.locale.Converter.getErrorMsg(options.failureSubject, jsonResp));
+						options.notifyBar.showError(MyApp.locale.Converter.getErrorMsg(options.failureSubject, jsonResp));
 					}
 
 					if (options.failure) {
@@ -195,7 +195,7 @@ Ext.define('Ecfa.util.Restful', {
 			failure : function() {
 				var internalErrorKey = 'internal';
 				if (options.failureSubject) {
-					options.notifyBar.showError(Ecfa.locale.Converter.getErrorMsg(options.failureSubject, {
+					options.notifyBar.showError(MyApp.locale.Converter.getErrorMsg(options.failureSubject, {
 						error : internalErrorKey
 					}));
 				}

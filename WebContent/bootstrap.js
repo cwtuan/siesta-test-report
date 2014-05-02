@@ -14,7 +14,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.Container.forground": "app/ExtOverride.js",
   "Ext.enhance.form.BasicForm": "app/ExtOverride.js",
   "Ext": "ext/src",
-  "Ecfa": "app",
+  "MyApp": "app",
   "Ext.enhance.form.action.Submit": "app/ExtOverride.js",
   "Ext.enhance.tree.Panel": "app/ExtOverride.js",
   "Ext.enhance.Container": "app/ExtOverride.js",
@@ -30,104 +30,104 @@ Ext.Loader.addClassPathMappings({
   "Ext.enhance.ux.form.ItemSelector": "app/ExtOverride.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
-  "Ecfa.action.Action": [],
-  "Ecfa.ux.i18n.model.Property": [],
+  "MyApp.action.Action": [],
+  "MyApp.ux.i18n.model.Property": [],
   "Ext.ux.grid.TransformGrid": [],
   "Ext.ux.ajax.DataSimlet": [],
   "Ext.enhance.form.BasicForm": [],
   "Ext.ux.event.Driver": [],
   "Ext.ux.ajax.XmlSimlet": [],
   "Ext.ux.DataView.DragSelector": [],
-  "Ecfa.ExtFix": [],
+  "MyApp.ExtFix": [],
   "Ext.ux.grid.menu.ListMenu": [],
-  "Ecfa.Const": [],
+  "MyApp.Const": [],
   "Ext.ux.form.MultiSelect": [
     "Ext.ux.Multiselect"
   ],
   "Ext.ux.CheckColumn": [],
   "Ext.ux.PreviewPlugin": [],
-  "Ecfa.event.Account": [],
+  "MyApp.event.Account": [],
   "Ext.ux.ajax.SimXhr": [],
   "Ext.ux.event.RecorderManager": [],
-  "Ecfa.ux.i18n.reader.Property": [],
+  "MyApp.ux.i18n.reader.Property": [],
   "Ext.ux.ProgressBarPager": [],
   "Ext.ux.ajax.Simlet": [],
   "Ext.enchance.grid.column.Column": [],
   "Ext.ux.SlidingPager": [],
-  "Ecfa.ExtSetting": [],
+  "MyApp.ExtSetting": [],
   "Ext.ux.TabReorderer": [],
   "Ext.ux.grid.filter.NumericFilter": [],
   "Ext.setting.grid.view": [],
-  "Ecfa.store.queue.Job": [],
+  "MyApp.store.queue.Job": [],
   "Ext.ux.event.Recorder": [],
-  "Ecfa.event.QueueManagement": [],
-  "Ecfa.controller.Queue": [],
-  "Ecfa.locale.Converter": [],
-  "Ecfa.view.MainToolbar": [],
+  "MyApp.event.QueueManagement": [],
+  "MyApp.controller.Queue": [],
+  "MyApp.locale.Converter": [],
+  "MyApp.view.MainToolbar": [],
   "Ext.ux.ajax.SimManager": [],
   "Ext.ux.grid.filter.BooleanFilter": [],
   "Ext.enhance.data.Connection": [],
   "Ext.ux.TabScrollerMenu": [],
   "Ext.ux.IFrame": [],
-  "Ecfa.event.Task": [],
-  "Ecfa.controller.Main": [],
-  "Ecfa.event.ModelEvent": [],
+  "MyApp.event.Task": [],
+  "MyApp.controller.Main": [],
+  "MyApp.event.ModelEvent": [],
   "Ext.ux.form.SearchField": [],
-  "Ecfa.view.Viewport": [],
+  "MyApp.view.Viewport": [],
   "Ext.ux.LiveSearchGridPanel": [],
   "Ext.Container.forground": [],
-  "Ecfa.ux.i18n.Bundle": [],
+  "MyApp.ux.i18n.Bundle": [],
   "Ext.ux.grid.filter.DateFilter": [],
   "Ext.ux.TreePicker": [],
-  "Ecfa.ExtOverride": [],
+  "MyApp.ExtOverride": [],
   "Ext.enhance.tree.Panel": [],
   "Ext.setting.grid.Panel": [],
   "Ext.ux.data.PagingMemoryProxy": [
     "Ext.data.PagingMemoryProxy"
   ],
   "Ext.ux.BoxReorderer": [],
-  "Ecfa.event.File": [],
+  "MyApp.event.File": [],
   "Ext.setting.panel.Table": [],
   "Ext.ux.grid.filter.Filter": [],
-  "Ecfa.view.queue.JobGrid": [],
+  "MyApp.view.queue.JobGrid": [],
   "Ext.ux.FieldReplicator": [],
-  "Ecfa.event.Project": [],
+  "MyApp.event.Project": [],
   "Ext.ux.grid.filter.ListFilter": [],
   "Ext.enhance.tab.Panel": [],
   "Ext.setting.MenuItem": [],
   "Ext.ux.GMapPanel": [],
-  "Ecfa.Session": [],
+  "MyApp.Session": [],
   "Ext.ux.GroupTabPanel": [],
   "Ext.ux.DataView.LabelEditor": [],
-  "Ecfa.event.Problem": [],
+  "MyApp.event.Problem": [],
   "Ext.ux.grid.filter.StringFilter": [],
   "Ext.ux.GroupTreeChunker": [],
   "Ext.ux.statusbar.ValidationStatus": [],
   "Ext.ux.layout.Center": [],
   "Ext.ux.DataView.Animated": [],
   "Ext.enhance.form.field.File": [],
-  "Ecfa.view.Main": [],
+  "MyApp.view.Main": [],
   "Ext.ux.statusbar.StatusBar": [
     "Ext.ux.StatusBar"
   ],
   "Ext.ux.grid.menu.RangeMenu": [],
   "Ext.ux.RowExpander": [],
-  "Ecfa.model.queue.Job": [],
+  "MyApp.model.queue.Job": [],
   "Ext.ux.event.Player": [],
   "Ext.enhance.grid.Panel": [],
   "Ext.enhance.Container": [],
   "Ext.enhance.Component": [],
   "Ext.ux.ToolbarDroppable": [],
   "Ext.ux.event.Maker": [],
-  "Ecfa.event.Submission": [],
+  "MyApp.event.Submission": [],
   "Ext.enhance.panel.Panel": [],
-  "Ecfa.event.Queue": [],
+  "MyApp.event.Queue": [],
   "Ext.ux.DataView.Draggable": [],
-  "Ecfa.event.User": [],
+  "MyApp.event.User": [],
   "Ext.ux.TabCloseMenu": [],
-  "Ecfa.Config": [],
+  "MyApp.Config": [],
   "Ext.enhance.data.Store": [],
-  "Ecfa.event.Model": [],
+  "MyApp.event.Model": [],
   "Ext.ux.form.ItemSelector": [
     "Ext.ux.ItemSelector"
   ],
@@ -136,13 +136,13 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.Spotlight": [],
   "Ext.ux.grid.FiltersFeature": [],
   "Ext.enhance.ux.RowExpander": [],
-  "Ecfa.event.Graph": [],
+  "MyApp.event.Graph": [],
   "Ext.enhance.Action": [],
   "Ext.enhance.ux.form.ItemSelector": []
 });
 Ext.ClassManager.addNameAliasMappings({
-  "Ecfa.action.Action": [],
-  "Ecfa.ux.i18n.model.Property": [],
+  "MyApp.action.Action": [],
+  "MyApp.ux.i18n.model.Property": [],
   "Ext.ux.grid.TransformGrid": [],
   "Ext.ux.ajax.DataSimlet": [],
   "Ext.enhance.form.BasicForm": [],
@@ -151,9 +151,9 @@ Ext.ClassManager.addNameAliasMappings({
     "simlet.xml"
   ],
   "Ext.ux.DataView.DragSelector": [],
-  "Ecfa.ExtFix": [],
+  "MyApp.ExtFix": [],
   "Ext.ux.grid.menu.ListMenu": [],
-  "Ecfa.Const": [],
+  "MyApp.Const": [],
   "Ext.ux.form.MultiSelect": [
     "widget.multiselect",
     "widget.multiselectfield"
@@ -164,12 +164,12 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.PreviewPlugin": [
     "plugin.preview"
   ],
-  "Ecfa.event.Account": [],
+  "MyApp.event.Account": [],
   "Ext.ux.ajax.SimXhr": [],
   "Ext.ux.event.RecorderManager": [
     "widget.eventrecordermanager"
   ],
-  "Ecfa.ux.i18n.reader.Property": [
+  "MyApp.ux.i18n.reader.Property": [
     "reader.property"
   ],
   "Ext.ux.ProgressBarPager": [],
@@ -178,18 +178,18 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.enchance.grid.column.Column": [],
   "Ext.ux.SlidingPager": [],
-  "Ecfa.ExtSetting": [],
+  "MyApp.ExtSetting": [],
   "Ext.ux.TabReorderer": [],
   "Ext.ux.grid.filter.NumericFilter": [
     "gridfilter.numeric"
   ],
   "Ext.setting.grid.view": [],
-  "Ecfa.store.queue.Job": [],
+  "MyApp.store.queue.Job": [],
   "Ext.ux.event.Recorder": [],
-  "Ecfa.event.QueueManagement": [],
-  "Ecfa.controller.Queue": [],
-  "Ecfa.locale.Converter": [],
-  "Ecfa.view.MainToolbar": [],
+  "MyApp.event.QueueManagement": [],
+  "MyApp.controller.Queue": [],
+  "MyApp.locale.Converter": [],
+  "MyApp.view.MainToolbar": [],
   "Ext.ux.ajax.SimManager": [],
   "Ext.ux.grid.filter.BooleanFilter": [
     "gridfilter.boolean"
@@ -201,37 +201,37 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.IFrame": [
     "widget.uxiframe"
   ],
-  "Ecfa.event.Task": [],
-  "Ecfa.controller.Main": [],
-  "Ecfa.event.ModelEvent": [],
+  "MyApp.event.Task": [],
+  "MyApp.controller.Main": [],
+  "MyApp.event.ModelEvent": [],
   "Ext.ux.form.SearchField": [
     "widget.searchfield"
   ],
-  "Ecfa.view.Viewport": [],
+  "MyApp.view.Viewport": [],
   "Ext.ux.LiveSearchGridPanel": [],
   "Ext.Container.forground": [],
-  "Ecfa.ux.i18n.Bundle": [],
+  "MyApp.ux.i18n.Bundle": [],
   "Ext.ux.grid.filter.DateFilter": [
     "gridfilter.date"
   ],
   "Ext.ux.TreePicker": [
     "widget.treepicker"
   ],
-  "Ecfa.ExtOverride": [],
+  "MyApp.ExtOverride": [],
   "Ext.enhance.tree.Panel": [],
   "Ext.setting.grid.Panel": [],
   "Ext.ux.data.PagingMemoryProxy": [
     "proxy.pagingmemory"
   ],
   "Ext.ux.BoxReorderer": [],
-  "Ecfa.event.File": [],
+  "MyApp.event.File": [],
   "Ext.setting.panel.Table": [],
   "Ext.ux.grid.filter.Filter": [],
-  "Ecfa.view.queue.JobGrid": [
+  "MyApp.view.queue.JobGrid": [
     "widget.jobGrid"
   ],
   "Ext.ux.FieldReplicator": [],
-  "Ecfa.event.Project": [],
+  "MyApp.event.Project": [],
   "Ext.ux.grid.filter.ListFilter": [
     "gridfilter.list"
   ],
@@ -240,12 +240,12 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.GMapPanel": [
     "widget.gmappanel"
   ],
-  "Ecfa.Session": [],
+  "MyApp.Session": [],
   "Ext.ux.GroupTabPanel": [
     "widget.grouptabpanel"
   ],
   "Ext.ux.DataView.LabelEditor": [],
-  "Ecfa.event.Problem": [],
+  "MyApp.event.Problem": [],
   "Ext.ux.grid.filter.StringFilter": [
     "gridfilter.string"
   ],
@@ -256,7 +256,7 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "Ext.ux.DataView.Animated": [],
   "Ext.enhance.form.field.File": [],
-  "Ecfa.view.Main": [],
+  "MyApp.view.Main": [],
   "Ext.ux.statusbar.StatusBar": [
     "widget.statusbar"
   ],
@@ -264,24 +264,24 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.RowExpander": [
     "plugin.rowexpander"
   ],
-  "Ecfa.model.queue.Job": [],
+  "MyApp.model.queue.Job": [],
   "Ext.ux.event.Player": [],
   "Ext.enhance.grid.Panel": [],
   "Ext.enhance.Container": [],
   "Ext.enhance.Component": [],
   "Ext.ux.ToolbarDroppable": [],
   "Ext.ux.event.Maker": [],
-  "Ecfa.event.Submission": [],
+  "MyApp.event.Submission": [],
   "Ext.enhance.panel.Panel": [],
-  "Ecfa.event.Queue": [],
+  "MyApp.event.Queue": [],
   "Ext.ux.DataView.Draggable": [],
-  "Ecfa.event.User": [],
+  "MyApp.event.User": [],
   "Ext.ux.TabCloseMenu": [
     "plugin.tabclosemenu"
   ],
-  "Ecfa.Config": [],
+  "MyApp.Config": [],
   "Ext.enhance.data.Store": [],
-  "Ecfa.event.Model": [],
+  "MyApp.event.Model": [],
   "Ext.ux.form.ItemSelector": [
     "widget.itemselector",
     "widget.itemselectorfield"
@@ -295,7 +295,7 @@ Ext.ClassManager.addNameAliasMappings({
     "feature.filters"
   ],
   "Ext.enhance.ux.RowExpander": [],
-  "Ecfa.event.Graph": [],
+  "MyApp.event.Graph": [],
   "Ext.enhance.Action": [],
   "Ext.enhance.ux.form.ItemSelector": []
 });

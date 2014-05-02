@@ -2,7 +2,7 @@
  * To switch view, use Ext.getCmp('mainToolbar').press('#opMonitor');
  */
 
-Ext.define('Ecfa.view.MainToolbar', {
+Ext.define('MyApp.view.MainToolbar', {
 	extend : 'Ext.toolbar.Toolbar',
 	// excludeItemId : [ 'notification' ],
 	actions : [],

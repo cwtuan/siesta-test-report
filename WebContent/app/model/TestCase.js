@@ -1,6 +1,6 @@
 // TODO model reference 
 
-Ext.define('Ecfa.model.TestCase', {
+Ext.define('MyApp.model.TestCase', {
 	extend : 'Ext.data.Model',
 	fields : [ {
 		name : 'startDate',

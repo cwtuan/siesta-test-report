@@ -1,14 +1,14 @@
 
-Ext.define('Ecfa.util.AuthValidator', {
+Ext.define('MyApp.util.AuthValidator', {
 	singleton : true,
-	alternateClassName : [ 'Ecfa.AuthValidator' ],
+	alternateClassName : [ 'MyApp.AuthValidator' ],
 	//*validator only return true, false*//
 	isProjectAuth : function(admins){
 		var result = false;
 //		console.log(admins);
 //		console.log('Session id: ');
-//		console.log(Ecfa.Session.getUser().id);
-		var userId = Ecfa.Session.getUser().id;
+//		console.log(MyApp.Session.getUser().id);
+		var userId = MyApp.Session.getUser().id;
 		Ext.each(admins, function(adminId){
 			//console.log(adminId);
 			//console.log(userId);
@@ -27,7 +27,7 @@ Ext.define('Ecfa.util.AuthValidator', {
 		//console.log(record);
 		if(record){
 			var missionUserId  = record.get('userName');			
-			var userId = Ecfa.Session.getUser().id;
+			var userId = MyApp.Session.getUser().id;
 			
 			if(missionUserId == userId){
 				return true;

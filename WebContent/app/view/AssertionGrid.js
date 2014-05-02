@@ -1,4 +1,4 @@
-Ext.define('Ecfa.view.AssertionGrid', {
+Ext.define('MyApp.view.AssertionGrid', {
 	extend : 'Ext.grid.Panel',
 	alias : 'widget.assertionGrid',
 	title : 'Assertions',
@@ -25,7 +25,7 @@ Ext.define('Ecfa.view.AssertionGrid', {
 	},
 	initComponent : function() {
 		var me = this;
-		me.store = Ext.create('Ecfa.store.Assertion');
+		me.store = Ext.create('MyApp.store.Assertion');
 
 		me.columns = [ {
 			text : 'Description',

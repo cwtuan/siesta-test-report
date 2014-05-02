@@ -1,6 +1,6 @@
 // TODO model reference 
 
-Ext.define('Ecfa.model.audit.TestSuite', {
+Ext.define('MyApp.model.audit.TestSuite', {
 	extend : 'Ext.data.Model',
 	fields : [  {
 		name : 'startDate',

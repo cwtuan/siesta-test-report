@@ -1,4 +1,4 @@
-Ext.define('Ecfa.controller.Main', {
+Ext.define('MyApp.controller.Main', {
 	extend : 'Ext.app.Controller',
 	refs : [ {
 		ref : 'testCaseGrid',
@@ -33,9 +33,9 @@ Ext.define('Ecfa.controller.Main', {
 // var values = form.getValues();
 // var startDateTime = Ext.Date.parse(values.startDate + ' ' +
 // form.down('#startTime').getRawValue(),
-// Ecfa.Config.DATETIME_FORMAT).getTime();
+// MyApp.Config.DATETIME_FORMAT).getTime();
 // var endDateTime = Ext.Date.parse(values.endDate + ' ' +
-// form.down('#endTime').getRawValue(), Ecfa.Config.DATETIME_FORMAT).getTime();
+// form.down('#endTime').getRawValue(), MyApp.Config.DATETIME_FORMAT).getTime();
 //
 // // console.log('values', values);
 //

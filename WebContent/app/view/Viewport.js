@@ -1,13 +1,13 @@
-Ext.define('Ecfa.view.Viewport', {
+Ext.define('MyApp.view.Viewport', {
 	extend : 'Ext.container.Viewport',
 	renderTo : Ext.getBody(),
 	requires : [
 
 	// view
-	'Ecfa.view.TestCaseGrid', 'Ecfa.view.AssertionGrid',
+	'MyApp.view.TestCaseGrid', 'MyApp.view.AssertionGrid',
 
 	// util
-	'Ecfa.util.Format'
+	'MyApp.util.Format'
 
 	],
 	id : 'viewport',

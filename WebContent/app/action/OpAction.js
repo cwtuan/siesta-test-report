@@ -1,9 +1,9 @@
-Ext.define('Ecfa.action.OpAction', {
-	extend : 'Ecfa.action.Action',
+Ext.define('MyApp.action.OpAction', {
+	extend : 'MyApp.action.Action',
 	role : null,
 	getDisabledTooltip : function() {
 		//console.log('opppp disable');
-		if (Ecfa.Session.getUser().role === Ecfa.Const.User.Role.VIEWER)
+		if (MyApp.Session.getUser().role === MyApp.Const.User.Role.VIEWER)
  		    return Locale.getMsg('view.auth.user.permissionDeny');
 		return null;
 	},

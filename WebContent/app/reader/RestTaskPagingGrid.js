@@ -8,8 +8,8 @@
 //		}
 // }
 
-Ext.define('Ecfa.reader.RestTaskPagingGrid', {
-	extend : 'Ecfa.reader.RestTaskGrid',
+Ext.define('MyApp.reader.RestTaskPagingGrid', {
+	extend : 'MyApp.reader.RestTaskGrid',
 	alias : 'reader.restTaskPagingGrid',
 	totalProperty : 'target.total',
 	root : 'target.items'

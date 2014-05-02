@@ -1,5 +1,5 @@
-Ext.define('Ecfa.action.CreateAction', {
-	extend : 'Ecfa.action.Action',
+Ext.define('MyApp.action.CreateAction', {
+	extend : 'MyApp.action.Action',
 	icon : 'css/images/add_16x16.png',
 	text : Locale.getMsg('view.common.add'),
 	form : null, // concrete action need to create a win for it 
@@ -14,13 +14,13 @@ Ext.define('Ecfa.action.CreateAction', {
 
 					// console.log('e.record.getProxy.url', e.record.getProxy().url);
 					//
-					Ecfa.Restful.PUT(e.record.getProxy().url + '/' + e.record.getId(), e.record.data, {
+					MyApp.Restful.PUT(e.record.getProxy().url + '/' + e.record.getId(), e.record.data, {
 						success : function(jsonResp) {
 
 							if (jsonResp.successful) {
 								config.eventType.fireEvent('updated');
 							} else {
-								Ext.getCmp('notifybar').showError(me.getEcfaExceptionMsg(jsonResp.error));
+								Ext.getCmp('notifybar').showError(me.getMyAppExceptionMsg(jsonResp.error));
 							}
 						},
 						failure : function(jsonResp) {

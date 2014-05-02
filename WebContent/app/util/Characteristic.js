@@ -1,6 +1,6 @@
-﻿Ext.define('Ecfa.util.Characteristic', {
+﻿Ext.define('MyApp.util.Characteristic', {
 	singleton : true,
-	alternateClassName : [ 'Ecfa.Characteristic' ],
+	alternateClassName : [ 'MyApp.Characteristic' ],
 	config : {
 		charMap : new Ext.util.HashMap()		
 	},
@@ -23,10 +23,10 @@
 		var chars = me.getSpec(productOid);
 		
 		//2. get all field component
-		var customFields = Ext.ClassManager.getNamesByExpression('Ecfa.view.queue.characteristics.field.*');		
+		var customFields = Ext.ClassManager.getNamesByExpression('MyApp.view.queue.characteristics.field.*');		
 		console.log(customFields);
 		
-		//3. convert characteristicId to object which is under 'Ecfa.view.queue.characteristics.field.*'
+		//3. convert characteristicId to object which is under 'MyApp.view.queue.characteristics.field.*'
 		Ext.each(chars, function(c){
 			Ext.each(customFields , function(field){
 				console.log(field);

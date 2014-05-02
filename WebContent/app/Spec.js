@@ -1,4 +1,4 @@
-Ext.define('Ecfa.Spec', {
+Ext.define('MyApp.Spec', {
 	singleton : true,	
 	
 	MAYA_2012 : '9c8bac37-83f1-4b59-87d4-329a376c2d04',

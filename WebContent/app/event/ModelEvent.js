@@ -1,16 +1,16 @@
-Ext.define('Ecfa.event.ModelEvent', {
+Ext.define('MyApp.event.ModelEvent', {
 	extend : 'Ext.util.Observable',
 	constructor : function() {
 
 		// TODO: const for event type
 		this.addEvents({
-			"selected" : false, // Ecfa.event.XXX.fireEvent('selected', record);
-			"created" : false, // Ecfa.event.XXX.fireEvent('created', record);
-			"updated" : false, // Ecfa.event.XXX.fireEvent('updated', record);
-			"destroyed" : false,// Ecfa.event.XXX.fireEvent('destroyed', record);
+			"selected" : false, // MyApp.event.XXX.fireEvent('selected', record);
+			"created" : false, // MyApp.event.XXX.fireEvent('created', record);
+			"updated" : false, // MyApp.event.XXX.fireEvent('updated', record);
+			"destroyed" : false,// MyApp.event.XXX.fireEvent('destroyed', record);
 			// "bulkupdated" : false,
 			"running" : false
-		// Ecfa.event.XXX.fireEvent('running', true);
+		// MyApp.event.XXX.fireEvent('running', true);
 		});
 		this.callParent(arguments);
 

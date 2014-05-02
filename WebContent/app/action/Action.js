@@ -1,4 +1,4 @@
-Ext.define('Ecfa.action.Action', {
+Ext.define('MyApp.action.Action', {
 	extend : 'Ext.Action',
 	hideOnClick : true,
 	scale : "small",

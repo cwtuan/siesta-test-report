@@ -1,5 +1,5 @@
 // To fix bugs in ExtJS, must load ExtJS before this
-Ext.define('Ecfa.ExtFix', {
+Ext.define('MyApp.ExtFix', {
 	singleton : true,
 	init : function(config) {
 

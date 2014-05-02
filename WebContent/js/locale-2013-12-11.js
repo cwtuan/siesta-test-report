@@ -30,8 +30,8 @@ var Locale = {
 		// TODO return this.map[key] ? Ext.util.Format.htmlDecode(this.map[key]) : key + '.undefined';
 		// FIXME for IE8 not trim space of bundle string
 		// if (Ext.ieVersion === 8) {
-		// Ext.define('Ecfa.fix.i18n.Bundle', {
-		// override : 'Ecfa.ux.i18n.Bundle',
+		// Ext.define('MyApp.fix.i18n.Bundle', {
+		// override : 'MyApp.ux.i18n.Bundle',
 		// getMsg : function(arguments) {
 		// return Ext.String.trim(this.callOverridden([ arguments ]));
 		// }

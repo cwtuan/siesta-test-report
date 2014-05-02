@@ -1,6 +1,6 @@
 // TODO model reference 
 
-Ext.define('Ecfa.model.Assertion', {
+Ext.define('MyApp.model.Assertion', {
 	extend : 'Ext.data.Model',
 	fields : [ {
 		name : 'type',

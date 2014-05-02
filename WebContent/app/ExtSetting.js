@@ -1,4 +1,4 @@
-Ext.define('Ecfa.ExtSetting', {
+Ext.define('MyApp.ExtSetting', {
 	singleton : true,
 	init : function(config) {
 
