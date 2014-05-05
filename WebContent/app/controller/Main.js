@@ -12,10 +12,10 @@ Ext.define('MyApp.controller.Main', {
 		me.control({
 			'testCaseGrid' : {
 				select : function(testCaseGrid, record, index, eOpts) {
-					console.log(me.getAssertionGrid());
+
 					me.getAssertionGrid().load(record);
 
-					console.log('record', record);
+					// console.log('record', record);
 				}
 			}
 		// ,

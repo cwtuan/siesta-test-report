@@ -14,4 +14,6 @@ TODO
  
  rename app name
  
- indentation for assertion grid
+ indentation for assertion gridb 
+ 
+ new logo

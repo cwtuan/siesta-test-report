@@ -35,7 +35,7 @@ Ext.define('MyApp.view.AssertionGrid', {
 		}, {
 			text : 'Passed',
 			dataIndex : 'passed',
-			 hidden : true,
+			hidden : true,
 			width : 200
 		// }, {
 		// text : 'Date',
@@ -64,15 +64,16 @@ Ext.define('MyApp.view.AssertionGrid', {
 	 */
 	formatTitle : function(value, p, record) {
 		var passed = record.get('passed');
-//		debugger;
-		console.log('passed',passed);
+		// debugger;
+		// console.log('passed',passed);
 		if (passed == "") {
 			return Ext.String.format('<div class="topic"><b>{0}</b></div>', record.get('description'));
 		} else if (passed === "true") {
 			return Ext.String.format('<div class="topic"><b>{0}</b><span class="label label-success">{1}</span> </div>', record.get('description'), 'Success');
 		} else {
-			
-			return Ext.String.format('<div class="topic"><b>{0}</b><span class="label label-important">{1}</span> </div>', record.get('description'), 'Failure');
+
+			return Ext.String
+					.format('<div class="topic"><b>{0}</b><span class="label label-important">{1}</span> </div>', record.get('description'), 'Failure');
 		}
 	},
 
