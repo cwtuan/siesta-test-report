@@ -2,6 +2,29 @@ Ext.define('MyApp.ExtSetting', {
 	singleton : true,
 	init : function(config) {
 
+
+	
+		// TODO init stateful component
+//		Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider', {
+//			expires : new Date(new Date().getTime() + 15552000000), // 180 days
+//			path : 'MyApp'
+//		}));
+//		Ext.define('Ext.setting.grid.Panel', {
+//			override : 'Ext.grid.Panel',
+//			initComponent : function() {
+//				
+//				console.log('stateful');
+//				
+//				var me = this;
+//				var className = Ext.getClassName(me);
+//				if (className != null && className.indexOf('MyApp') != -1) {
+//					me.stateful = true;
+//					me.stateId = className;
+//				}
+//				me.callParent();
+//			}
+//		});
+
 		// Disable row selection when clicking row on grid
 		// Ext.define('Ext.setting.grid.Panel', {
 		// override : 'Ext.grid.Panel',

@@ -20,12 +20,12 @@ Ext.define('MyApp.view.Viewport', {
 	}, {
 		region : 'east',
 		xtype : 'assertionGrid',
-		flex : 0.8,
+		flex : 0.55,
 		split : true,
 		collapsible : true,
-	}, {
+	}, {	
 		region : 'center',
+		flex : 0.45,
 		xtype : 'testCaseGrid'
-
 	} ]
 });

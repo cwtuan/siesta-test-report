@@ -21,10 +21,14 @@ Ext.define('MyApp.view.TestCaseGrid', {
 		}, {
 			text : 'url',
 			dataIndex : 'url',
-			flex : 1
+			flex : 1,
+			renderer : function(value, meta, record) {
+				meta.style = 'font-weight:bold;';
+				return value;
+			}
 		}, {
 			text : 'passed',
-			width : 150,
+			width : 110,
 			dataIndex : 'passed',
 			renderer : function(value, meta, record) {
 
@@ -46,17 +50,17 @@ Ext.define('MyApp.view.TestCaseGrid', {
 					meta.innerCls = ' label label-success';
 				}
 
-				return value + Ext.String.format(' ({0}/{1})', passNum, total);
+				return (value ? 'Success' : 'Failure') + Ext.String.format(' ({0}/{1})', passNum, total);
 			}
 		}, {
 			text : 'startDate',
 			dataIndex : 'startDate',
-			width : 150,
+			width : 140,
 			renderer : MyApp.Format.dateTime
 		}, {
 			text : 'endDate',
 			dataIndex : 'endDate',
-			width : 150,
+			width : 140,
 			renderer : MyApp.Format.dateTime
 		} ];
 
