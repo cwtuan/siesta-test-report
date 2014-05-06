@@ -92,6 +92,12 @@ Ext.define('MyApp.view.TestCaseGrid', {
 				},
 				menu : new Ext.menu.Menu({
 					items : [ {
+						text : 'Siesta Test Page',
+						handler : function() {
+							window.open(file.testURL);
+							window.focus();
+						}
+					}, {
 						text : file.fileName,
 						handler : function() {
 							window.open('app/data/' + file.fileName);
