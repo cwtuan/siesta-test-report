@@ -13,8 +13,32 @@ Ext.define('MyApp.view.TestCaseGrid', {
 	},
 	initComponent : function() {
 		var me = this;
+		var i;
 
 		me.store = Ext.create('MyApp.store.TestCase');
+
+		me.testSuites = {};
+		Ext.Array.each(MyApp.Config.test_result_files, function(file) {
+
+			
+			MyApp.Restful.request({
+				url : 'app/data/' + file.fileName,
+				method : 'GET',
+				async:false,
+				success : function(data) {
+		
+					me.testSuites[file.fileName] = data;
+					// TODO calculus summary in (test case record). 
+					// .set({total:3, success2})
+					// dont calculus in column
+			
+				}
+			});
+
+			// me.load();
+		});
+
+		// me.store = Ext.create('MyApp.store.TestCase');
 
 		me.columns = [ {
 			xtype : 'rownumberer'
@@ -40,7 +64,8 @@ Ext.define('MyApp.view.TestCaseGrid', {
 					passNum += a.passed ? 1 : 0;
 				});
 
-				// Siesta may mis-judge the result so don't use the "passed" value directly.
+				// Siesta may mis-judge the result so don't use the "passed"
+				// value directly.
 				value = (total == passNum);
 
 				if (!value) {
@@ -64,19 +89,22 @@ Ext.define('MyApp.view.TestCaseGrid', {
 			renderer : MyApp.Format.dateTime
 		} ];
 
-		me.store.on({
-			load : function(store, records, successful) {
-				if (successful && records.length > 0) {
-					me.getSelectionModel().select(records[0]);
-				}
-			}
-		});
+		// TODO
+		// me.store.on({
+		// load : function(store, records, successful) {
+		// if (successful && records.length > 0) {
+		// me.getSelectionModel().select(records[0]);
+		// }
+		// }
+		// });
 
 		me.tbar = [];
 
 		// TODO tabscrollermenu
 		// TODO show (passed/total) in button
+		i = -1;
 		Ext.Array.each(MyApp.Config.test_result_files, function(file) {
+			i++;
 			me.tbar.push(
 
 			Ext.create('Ext.button.Split', {
@@ -87,7 +115,9 @@ Ext.define('MyApp.view.TestCaseGrid', {
 				allowDepress : false,
 				toggleHandler : function(button, state) {
 					if (state) {
-						me.load('app/data/' + file.fileName);
+						console.log('loadRawData',me.testSuites[file.fileName]);
+						me.store.loadRawData(me.testSuites[file.fileName]);					 
+						// me.load('app/data/' + file.fileName);
 					}
 				},
 				menu : new Ext.menu.Menu({
@@ -128,7 +158,6 @@ Ext.define('MyApp.view.TestCaseGrid', {
 	load : function(url) {
 		var me = this;
 		me.store.proxy.url = url;
-		// FIXME sometimes it donest load new data
 		me.store.load();
 	}
 });

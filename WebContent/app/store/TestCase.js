@@ -4,7 +4,7 @@ Ext.define('MyApp.store.TestCase', {
 	extend : 'Ext.data.Store',
 	model : 'MyApp.model.TestCase',
 	proxy : {
-		type : 'ajax',
+		type : 'memory',
 		// url : 'app/data/up_result_chrome.json',
 		reader : {
 			type : 'json',
