@@ -20,18 +20,47 @@ Ext.define('MyApp.view.TestCaseGrid', {
 		me.testSuites = {};
 		Ext.Array.each(MyApp.Config.test_result_files, function(file) {
 
-			
 			MyApp.Restful.request({
 				url : 'app/data/' + file.fileName,
 				method : 'GET',
-				async:false,
+				async : false,
 				success : function(data) {
-		
-					me.testSuites[file.fileName] = data;
-					// TODO calculus summary in (test case record). 
-					// .set({total:3, success2})
-					// dont calculus in column
-			
+
+					var testSuite = data;
+					var assertionTotalNum, assertionPassedNum;
+					var testCaseTotalNum = 0, testCasePassedNum = 0;
+
+					var testCases = testSuite.testCases;
+					for (var i = 0; i < testCases.length; ++i) {
+						var assertions = testCases[i].assertions;
+						assertionPassedNum = assertionTotalNum = 0;
+
+						for (var j = 0; j < assertions.length; ++j) {
+							var passed = assertions[j].passed;
+							if (passed != null) {
+								if (passed) {
+									++assertionPassedNum;
+								}
+								++assertionTotalNum;
+							}
+						}
+						Ext.apply(testSuite.testCases[i], {
+							passedNum : assertionPassedNum,
+							totalNum : assertionTotalNum
+						});
+						testCasePassedNum += assertionPassedNum;
+						testCaseTotalNum += assertionTotalNum;
+
+					}
+					Ext.apply(testSuite, {
+						passedNum : testCasePassedNum,
+						totalNum : testCaseTotalNum
+					});
+
+					me.testSuites[file.fileName] = testSuite;
+
+					// console.log(' me.testSuites[file.fileName] ', me.testSuites[file.fileName]);
+
 				}
 			});
 
@@ -51,72 +80,59 @@ Ext.define('MyApp.view.TestCaseGrid', {
 				return value;
 			}
 		}, {
-			text : 'passed',
+			text : 'Passed',
 			width : 110,
 			dataIndex : 'passed',
 			renderer : function(value, meta, record) {
-
-				var assertions = record.get('assertions');
-				var total = 0;
-				var passNum = 0;
-				Ext.Array.each(assertions, function(a) {
-					total += (a.passed != null) ? 1 : 0;
-					passNum += a.passed ? 1 : 0;
-				});
-
-				// Siesta may mis-judge the result so don't use the "passed"
-				// value directly.
-				value = (total == passNum);
-
-				if (!value) {
-					console.log('meta', meta);
-					meta.innerCls = ' label label-important';
-				} else {
-					meta.innerCls = ' label label-success';
-				}
-
-				return (value ? 'Success' : 'Failure') + Ext.String.format(' ({0}/{1})', passNum, total);
+				// console.log('record', record);
+				var passedNum = record.get('passedNum');
+				var totalNum = record.get('totalNum');
+				var passed = passedNum === totalNum;
+				// Siesta may mis-judge the result so don't use the "passed" value directly.
+				meta.innerCls = passed ? ' label label-success' : ' label label-important';
+				return (passed ? 'Success' : 'Failure') + Ext.String.format(' ({0}/{1})', passedNum, totalNum);
 			}
 		}, {
-			text : 'startDate',
+			text : 'Start',
 			dataIndex : 'startDate',
 			width : 140,
 			renderer : MyApp.Format.dateTime
 		}, {
-			text : 'endDate',
+			text : 'End',
 			dataIndex : 'endDate',
 			width : 140,
+			// TODO tooltip for duration
 			renderer : MyApp.Format.dateTime
 		} ];
 
-		// TODO
-		// me.store.on({
-		// load : function(store, records, successful) {
-		// if (successful && records.length > 0) {
-		// me.getSelectionModel().select(records[0]);
-		// }
-		// }
-		// });
+		me.store.on({
+			datachanged : function(store) {
+				if (store.getCount() > 0) {
+					me.getSelectionModel().select(0);
+				}
+			}
+		});
 
 		me.tbar = [];
 
 		// TODO tabscrollermenu
-		// TODO show (passed/total) in button
+
 		i = -1;
 		Ext.Array.each(MyApp.Config.test_result_files, function(file) {
 			i++;
 			me.tbar.push(
 
 			Ext.create('Ext.button.Split', {
-				text : file.display ? file.display : file.fileName,
+				text : (file.display ? file.display : file.fileName)
+						+ Ext.String.format(' ({0}/{1})', me.testSuites[file.fileName].passedNum, me.testSuites[file.fileName].totalNum),
 				icon : 'css/images/book.png',
 				scale : 'medium',
 				toggleGroup : 'mainbar',
 				allowDepress : false,
 				toggleHandler : function(button, state) {
 					if (state) {
-						console.log('loadRawData',me.testSuites[file.fileName]);
-						me.store.loadRawData(me.testSuites[file.fileName]);					 
+						// console.log('loadRawData', me.testSuites[file.fileName]);
+						me.store.loadRawData(me.testSuites[file.fileName]);
 						// me.load('app/data/' + file.fileName);
 					}
 				},
@@ -144,20 +160,15 @@ Ext.define('MyApp.view.TestCaseGrid', {
 
 		me.on({
 			afterrender : function(toolbar, eOpts) {
-				// me.down('button').btn.el.dom.click();
-				// setTimeout(3000, function() {
-				var button = me.down('button');
-				button.toggle(true);
-				// });
-
+				me.down('button').toggle(true);
 			}
 		});
 
-	},
-
-	load : function(url) {
-		var me = this;
-		me.store.proxy.url = url;
-		me.store.load();
 	}
+// ,
+// load : function(url) {
+// var me = this;
+// me.store.proxy.url = url;
+// me.store.load();
+// }
 });

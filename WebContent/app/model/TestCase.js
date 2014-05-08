@@ -1,4 +1,4 @@
-// TODO model reference 
+// TODO model reference
 
 Ext.define('MyApp.model.TestCase', {
 	extend : 'Ext.data.Model',
@@ -14,6 +14,12 @@ Ext.define('MyApp.model.TestCase', {
 	}, {
 		name : 'url',
 		type : 'string'
+	}, {
+		name : 'totalNum',
+		type : 'int'
+	}, {
+		name : 'passedNum',
+		type : 'int'
 	}, 'assertions'
 
 	]
