@@ -18,7 +18,7 @@ Ext.define('MyApp.view.TestCaseGrid', {
 		me.store = Ext.create('MyApp.store.TestCase');
 
 		me.testSuites = {};
-		Ext.Array.each(MyApp.Config.test_result_files, function(file) {
+		Ext.Array.each(MyApp.Config.test_results, function(file) {
 
 			MyApp.Restful.request({
 				url : 'app/data/' + file.fileName,
@@ -118,7 +118,7 @@ Ext.define('MyApp.view.TestCaseGrid', {
 		// TODO tabscrollermenu
 
 		i = -1;
-		Ext.Array.each(MyApp.Config.test_result_files, function(file) {
+		Ext.Array.each(MyApp.Config.test_results, function(file) {
 			i++;
 			me.tbar.push(
 
